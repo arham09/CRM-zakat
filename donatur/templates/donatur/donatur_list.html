@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}AMIL ZAKAT{% endblock %}
+
+{% block content %}
+  <h2>Daftar Donatur</h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr class="warning">
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Contact</th>
+        <th>Umur</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for donatur in donatur %}
+        <tr class="success">
+          <td>{{ donatur.nama }}</td>
+          <td>{{ donatur.alamat }}</td>
+          <td>{{ donatur.contact }}</td>
+          <td>{{ donatur.umur }}</td>
+        </tr>
+      {% empty %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

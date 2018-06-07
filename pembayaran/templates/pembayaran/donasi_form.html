@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Donation Form</h2>
+
+  <form method="post" id="donasiForm" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }} <br>
+    </table>
+    <hr>
+    <button class="btn btn-info" type="submit">Save</button>
+    <a href="{% url 'donatur:donatur_list' %}">Nevermind</a>
+  </form>
+{% endblock %}
